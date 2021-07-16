@@ -296,6 +296,15 @@ struct Utils {
         }
     }
 
+    func hideDeferralCount() -> Bool {
+        let hideDeferralCount = CommandLine.arguments.contains("-hide-deferral-count")
+        if hideDeferralCount {
+            let msg = "-hide-deferral-count argument passed"
+            uiLog.debug("\(msg, privacy: .public)")
+        }
+        return hideDeferralCount
+    }
+    
     func openMoreInfo() {
         guard let url = URL(string: aboutUpdateURL) else {
             return

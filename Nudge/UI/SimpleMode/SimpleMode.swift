@@ -92,14 +92,16 @@ struct SimpleMode: View {
                     }
                 }
 
-                // Maybe make this default to hidden with a pref to enable
                 // Deferred Count
-                HStack {
-                    Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
-                        .font(.title3)
-                    Text(String(self.deferralCountUI))
-                        .font(.title3)
-                        .fontWeight(.bold)
+                // Show by default, allow to be hidden via preference
+                if !Utils().hideDeferralCount() {
+                    HStack {
+                        Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
+                            .font(.title3)
+                        Text(String(self.deferralCountUI))
+                            .font(.title3)
+                            .fontWeight(.bold)
+                    }
                 }
 
                 // actionButton
