@@ -115,7 +115,7 @@ struct StandardModeLeftSide: View {
 
                 // Deferred Count
                 // Show by default, allow to be hidden via preference
-                if !Utils().hideDeferralCount() {
+                if !Utils().hideDeferralCountEnabled() {
                     HStack{
                         Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
                         Spacer()

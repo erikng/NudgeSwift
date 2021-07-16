@@ -49,6 +49,7 @@ let userInterfaceUpdateElementsProfile = getUserInterfaceUpdateElementsProfile()
 let userInterfaceUpdateElementsJSON = getUserInterfaceUpdateElementsJSON()
 let fallbackLanguage = userInterfaceProfile?["fallbackLanguage"] as? String ?? userInterfaceJSON?.fallbackLanguage ?? "en"
 let forceFallbackLanguage = userInterfaceProfile?["forceFallbackLanguage"] as? Bool ?? userInterfaceJSON?.forceFallbackLanguage ?? false
+let hideDeferralCount = userInterfaceProfile?["hideDeferralCount"] as? Bool ?? userInterfaceJSON?.hideDeferralCount ?? false
 let iconDarkPath = userInterfaceProfile?["iconDarkPath"] as? String ?? userInterfaceJSON?.iconDarkPath ?? ""
 let iconLightPath = userInterfaceProfile?["iconLightPath"] as? String ?? userInterfaceJSON?.iconLightPath ?? ""
 let screenShotDarkPath = userInterfaceProfile?["screenShotDarkPath"] as? String ?? userInterfaceJSON?.screenShotDarkPath ?? ""

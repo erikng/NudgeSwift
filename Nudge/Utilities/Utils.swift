@@ -82,6 +82,15 @@ struct Utils {
         return forceScreenShotIconMode
     }
 
+    func hideDeferralCountEnabled() -> Bool {
+        let hideDeferralCount = CommandLine.arguments.contains("-hide-deferral-count")
+        if hideDeferralCount {
+            let msg = "-hide-deferral-count argument passed"
+            uiLog.debug("\(msg, privacy: .public)")
+        }
+        return hideDeferralCount
+    }
+    
     func fullyUpdated() -> Bool {
         let fullyUpdated = versionGreaterThanOrEqual(currentVersion: currentOSVersion, newVersion: requiredMinimumOSVersion)
         if fullyUpdated {
@@ -294,15 +303,6 @@ struct Utils {
         } else {
             return initialRefreshCycle
         }
-    }
-
-    func hideDeferralCount() -> Bool {
-        let hideDeferralCount = CommandLine.arguments.contains("-hide-deferral-count")
-        if hideDeferralCount {
-            let msg = "-hide-deferral-count argument passed"
-            uiLog.debug("\(msg, privacy: .public)")
-        }
-        return hideDeferralCount
     }
     
     func openMoreInfo() {
