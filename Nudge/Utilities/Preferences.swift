@@ -183,11 +183,11 @@ func forceScreenShotIconMode() -> Bool {
     }
 }
 
-func hideDeferralCount() -> Bool {
-    if Utils().hideDeferralCountEnabled() {
+func showDeferralCount() -> Bool {
+    if Utils().showDeferralCountEnabled() {
         return true
     } else {
-        return userInterfaceProfile?["hideDeferralCount"] as? Bool ?? nudgeJSONPreferences?.userInterface?.hideDeferralCount ?? false
+        return userInterfaceProfile?["showDeferralCount"] as? Bool ?? nudgeJSONPreferences?.userInterface?.showDeferralCount ?? true
     }
 }
 

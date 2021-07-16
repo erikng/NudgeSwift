@@ -66,7 +66,7 @@
     "fallbackLanguage": "en",
     "forceFallbackLanguage": false,
     "forceScreenShotIcon": false,
-    "hideDeferralCount": false,
+    "showDeferralCount": true,
     "iconDarkPath": "/somewhere/logoDark.png",
     "iconLightPath": "/somewhere/logoLight.png",
     "screenShotDarkPath": "/somewhere/screenShotDark.png",

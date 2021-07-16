@@ -365,7 +365,7 @@ extension UserExperience {
 // MARK: - UserInterface
 struct UserInterface: Codable {
     var fallbackLanguage: String?
-    var forceFallbackLanguage, forceScreenShotIcon, hideDeferralCount: Bool?
+    var forceFallbackLanguage, forceScreenShotIcon, showDeferralCount: Bool?
     var iconDarkPath, iconLightPath, screenShotDarkPath, screenShotLightPath: String?
     var simpleMode, singleQuitButton: Bool?
     var umadElements: [UmadElement]?
@@ -394,7 +394,7 @@ extension UserInterface {
         fallbackLanguage: String?? = nil,
         forceFallbackLanguage: Bool?? = nil,
         forceScreenShotIcon: Bool?? = nil,
-        hideDeferralCount: Bool?? = nil,
+        showDeferralCount: Bool?? = nil,
         iconDarkPath: String?? = nil,
         iconLightPath: String?? = nil,
         screenShotDarkPath: String?? = nil,
@@ -408,7 +408,7 @@ extension UserInterface {
             fallbackLanguage: fallbackLanguage ?? self.fallbackLanguage,
             forceFallbackLanguage: forceFallbackLanguage ?? self.forceFallbackLanguage,
             forceScreenShotIcon: forceScreenShotIcon ?? self.forceScreenShotIcon,
-            hideDeferralCount: hideDeferralCount ?? self.hideDeferralCount,
+            showDeferralCount: showDeferralCount ?? self.showDeferralCount,
             iconDarkPath: iconDarkPath ?? self.iconDarkPath,
             iconLightPath: iconLightPath ?? self.iconLightPath,
             screenShotDarkPath: screenShotDarkPath ?? self.screenShotDarkPath,

@@ -110,8 +110,8 @@
           <false/>
           <key>forceScreenShotIcon</key>
           <false/>
-          <key>hideDeferralCount</key>
-          <false/>
+          <key>showDeferralCount</key>
+          <true/>
           <key>iconDarkPath</key>
           <string>/somewhere/logoDark.png</string>
           <key>iconLightPath</key>

@@ -82,13 +82,13 @@ struct Utils {
         return forceScreenShotIconMode
     }
 
-    func hideDeferralCountEnabled() -> Bool {
-        let hideDeferralCount = CommandLine.arguments.contains("-hide-deferral-count")
-        if hideDeferralCount {
+    func showDeferralCountEnabled() -> Bool {
+        let showDeferralCount = !CommandLine.arguments.contains("-hide-deferral-count")
+        if showDeferralCount {
             let msg = "-hide-deferral-count argument passed"
             uiLog.debug("\(msg, privacy: .public)")
         }
-        return hideDeferralCount
+        return showDeferralCount
     }
     
     func fullyUpdated() -> Bool {

@@ -71,30 +71,30 @@ struct SimpleMode: View {
                 // Current OS Version
                 HStack{
                     Text("Current OS Version:".localized(desiredLanguage: getDesiredLanguage()))
-                        .font(.title3)
+                        .font(.title2)
                     Text(manager.current.description)
                         .foregroundColor(.secondary)
-                        .font(.title3)
+                        .font(.title2)
                 }
 
                 // Days Remaining
-                HStack {
-                    Text("Days remaining to update:".localized(desiredLanguage: getDesiredLanguage()))
-                        .font(.title2)
-                    if self.daysRemaining <= 0 {
-                        Text(String(0))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                    } else {
-                        Text(String(self.daysRemaining))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                    }
-                }
+//                HStack {
+//                    Text("Days remaining to update:".localized(desiredLanguage: getDesiredLanguage()))
+//                        .font(.title2)
+//                    if self.daysRemaining <= 0 {
+//                        Text(String(0))
+//                            .font(.title2)
+//                            .fontWeight(.bold)
+//                    } else {
+//                        Text(String(self.daysRemaining))
+//                            .font(.title2)
+//                            .fontWeight(.bold)
+//                    }
+//                }
 
                 // Deferred Count
                 // Show by default, allow to be hidden via preference
-                if !hideDeferralCount() {
+                if showDeferralCount() {
                     HStack {
                         Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
                             .font(.title3)
