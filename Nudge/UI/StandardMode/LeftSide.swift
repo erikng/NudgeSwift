@@ -114,11 +114,13 @@ struct StandardModeLeftSide: View {
                 }
 
                 // Deferred Count
-                HStack{
-                    Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
-                    Spacer()
-                    Text(String(self.deferralCountUI))
-                        .foregroundColor(.secondary)
+                if self.deferralCountUI > 0 {
+                    HStack{
+                        Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
+                        Spacer()
+                        Text(String(self.deferralCountUI))
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
             .frame(width: 250)

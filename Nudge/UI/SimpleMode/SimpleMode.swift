@@ -75,14 +75,15 @@ struct SimpleMode: View {
                 }
 
                 // Deferred Count
-                HStack {
-                    Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
-                        .font(.title2)
-                    Text(String(self.deferralCountUI))
-                        .font(.title2)
-                        .fontWeight(.bold)
+                if self.deferralCountUI > 0 {
+                    HStack {
+                        Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
+                            .font(.title2)
+                        Text(String(self.deferralCountUI))
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
                 }
-
                 // actionButton
                 Button(action: {
                     Utils().updateDevice()
