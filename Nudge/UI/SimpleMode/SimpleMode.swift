@@ -59,28 +59,49 @@ struct SimpleMode: View {
                         .fontWeight(.bold)
                 }
                 
-                // Days Remaining
-                HStack {
-                    Text("Days remaining to update:".localized(desiredLanguage: getDesiredLanguage()))
+                // Required OS Version
+                HStack{
+                    Text("Required OS Version:".localized(desiredLanguage: getDesiredLanguage()))
                         .font(.title2)
-                    if self.daysRemaining <= 0 {
-                        Text(String(0))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                    } else {
-                        Text(String(self.daysRemaining))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                    }
+                    Text(String(requiredMinimumOSVersion))
+                        .foregroundColor(.secondary)
+                        .font(.title2)
                 }
 
+                // Current OS Version
+                HStack{
+                    Text("Current OS Version:".localized(desiredLanguage: getDesiredLanguage()))
+                        .font(.title2)
+                    Text(manager.current.description)
+                        .foregroundColor(.secondary)
+                        .font(.title2)
+                }
+
+                // Days Remaining
+//                HStack {
+//                    Text("Days remaining to update:".localized(desiredLanguage: getDesiredLanguage()))
+//                        .font(.title2)
+//                    if self.daysRemaining <= 0 {
+//                        Text(String(0))
+//                            .font(.title2)
+//                            .fontWeight(.bold)
+//                    } else {
+//                        Text(String(self.daysRemaining))
+//                            .font(.title2)
+//                            .fontWeight(.bold)
+//                    }
+//                }
+
                 // Deferred Count
-                HStack {
-                    Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
-                        .font(.title2)
-                    Text(String(self.deferralCountUI))
-                        .font(.title2)
-                        .fontWeight(.bold)
+                // Show by default, allow to be hidden via preference
+                if showDeferralCount {
+                    HStack {
+                        Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
+                            .font(.title3)
+                        Text(String(self.deferralCountUI))
+                            .font(.title3)
+                            .fontWeight(.bold)
+                    }
                 }
 
                 // actionButton
