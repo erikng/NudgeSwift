@@ -94,7 +94,7 @@ struct SimpleMode: View {
 
                 // Deferred Count
                 // Show by default, allow to be hidden via preference
-                if showDeferralCount() {
+                if showDeferralCount {
                     HStack {
                         Text("Deferred Count:".localized(desiredLanguage: getDesiredLanguage()))
                             .font(.title3)
